@@ -1,0 +1,25 @@
+name: C++20 Tests Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar CMake
+        run: cmake -B build -S .
+
+      - name: Compilar proyecto
+        run: cmake --build build
+
+      - name: Ejecutar Pruebas (CTest)
+        working-directory: build
+        run: ctest --output-on-failure
