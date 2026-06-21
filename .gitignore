@@ -1,0 +1,17 @@
+# Archivos y carpetas de CLion
+.idea/
+cmake-build-*/
+
+# Archivos de compilacion genericos
+build/
+*.o
+*.obj
+*.exe
+*.dll
+*.lib
+*.a
+*.out
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
